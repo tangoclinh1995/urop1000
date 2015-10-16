@@ -1,0 +1,20 @@
+﻿<Window x:Class="DesktopStation.MouseControlWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DesktopStation"
+        mc:Ignorable="d"
+        Title="Mouse Control" Height="180.386" Width="410.406" Closing="Window_Closing" ResizeMode="NoResize">
+    <Grid Margin="0,0,2,0">
+        <Slider x:Name="sliderHandVerticalSensitivity" Margin="108,20,56,0" VerticalAlignment="Top" Height="26" Minimum="0.1" Maximum="0.9" LargeChange="0.1" SmallChange="0.01" TickFrequency="0.1" TickPlacement="BottomRight" ValueChanged="sliderX_ValueChanged"/>
+        <Slider x:Name="sliderHandHorizontalSensitivity" Margin="108,61,56,0" VerticalAlignment="Top" Height="26" Minimum="0.1" Maximum="0.9" LargeChange="0.1" SmallChange="0.01" TickFrequency="0.1" TickPlacement="BottomRight" ValueChanged="sliderY_ValueChanged"/>
+        <Button x:Name="btnStartMouse" Content="Start Mouse" Margin="123,103,0,0" VerticalAlignment="Top" Height="28" HorizontalAlignment="Left" Width="102" FontWeight="Bold" Click="btnStartMouse_Click"/>
+        <Button x:Name="btnStartRecording" Content="Start Recording" Margin="10,103,0,0" VerticalAlignment="Top" Height="28" HorizontalAlignment="Left" Width="108" Click="btnStartRecording_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Hand Vertical Sensitivity" VerticalAlignment="Top" Height="36" Width="75"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,51,0,0" TextWrapping="Wrap" Text="Hand Horizontal Sensitivity" VerticalAlignment="Top" Height="36" Width="93"/>
+        <TextBlock x:Name="lblVertical" HorizontalAlignment="Right" Margin="0,20,10,0" TextWrapping="Wrap" Text="{Binding ElementName=sliderHandVerticalSensitivity, Path=Value, StringFormat={}{0:0.000}}" VerticalAlignment="Top" Height="26" Width="41"/>
+        <TextBlock x:Name="lblHorizontal_Copy" Margin="0,61,10,0" TextWrapping="Wrap" Text="{Binding ElementName=sliderHandHorizontalSensitivity, Path=Value, StringFormat={}{0:0.000}}" VerticalAlignment="Top" Height="26" HorizontalAlignment="Right" Width="41"/>
+
+    </Grid>
+</Window>
